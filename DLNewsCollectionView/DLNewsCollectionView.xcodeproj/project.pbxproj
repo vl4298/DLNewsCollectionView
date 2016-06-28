@@ -12,6 +12,8 @@
 		285E1C0F1D221AEA002C7FA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C0D1D221AEA002C7FA1 /* Main.storyboard */; };
 		285E1C111D221AEA002C7FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C101D221AEA002C7FA1 /* Assets.xcassets */; };
 		285E1C141D221AEA002C7FA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C121D221AEA002C7FA1 /* LaunchScreen.storyboard */; };
+		285E1C1C1D221B5D002C7FA1 /* DLNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E1C1B1D221B5D002C7FA1 /* DLNewsController.swift */; };
+		285E1C1E1D221BE7002C7FA1 /* DLNewsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E1C1D1D221BE7002C7FA1 /* DLNewsCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		285E1C101D221AEA002C7FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		285E1C131D221AEA002C7FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		285E1C151D221AEA002C7FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		285E1C1B1D221B5D002C7FA1 /* DLNewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLNewsController.swift; sourceTree = "<group>"; };
+		285E1C1D1D221BE7002C7FA1 /* DLNewsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLNewsCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				285E1C101D221AEA002C7FA1 /* Assets.xcassets */,
 				285E1C121D221AEA002C7FA1 /* LaunchScreen.storyboard */,
 				285E1C151D221AEA002C7FA1 /* Info.plist */,
+				285E1C1B1D221B5D002C7FA1 /* DLNewsController.swift */,
+				285E1C1D1D221BE7002C7FA1 /* DLNewsCollectionViewLayout.swift */,
 			);
 			path = DLNewsCollectionView;
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285E1C1C1D221B5D002C7FA1 /* DLNewsController.swift in Sources */,
 				285E1C0C1D221AEA002C7FA1 /* ViewController.swift in Sources */,
+				285E1C1E1D221BE7002C7FA1 /* DLNewsCollectionViewLayout.swift in Sources */,
 				285E1C0A1D221AEA002C7FA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

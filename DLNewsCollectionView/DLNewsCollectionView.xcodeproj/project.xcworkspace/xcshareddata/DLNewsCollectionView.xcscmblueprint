@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "66E9808F60F860A0E7058FDF14C061F59D622CD8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "66E9808F60F860A0E7058FDF14C061F59D622CD8" : 0,
+    "7B0F20782CACD5F5332B7C8B7ADDCD6E95274F27" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "154E420C-6AE3-407D-96FC-FC2BAD5055F3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "66E9808F60F860A0E7058FDF14C061F59D622CD8" : "NewsCollectionView\/",
+    "7B0F20782CACD5F5332B7C8B7ADDCD6E95274F27" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DLNewsCollectionView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DLNewsCollectionView\/DLNewsCollectionView.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vl4298\/DLNewsCollectionView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "66E9808F60F860A0E7058FDF14C061F59D622CD8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vl4298\/DLCardViewCollection.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B0F20782CACD5F5332B7C8B7ADDCD6E95274F27"
+    }
+  ]
+}
