@@ -14,6 +14,7 @@ class DLNewsController: UIViewController {
   var collectionViewLayout: DLNewsCollectionViewLayout! = nil
   var dataSource = [UIColor]()
   var isInteracting = false
+  var currentIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,7 +33,6 @@ class DLNewsController: UIViewController {
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.interactive(_:)))
     collectionView.addGestureRecognizer(panGesture)
     
-    collectionView.backgroundColor = UIColor.greenColor()
     initDatasoruce()
   }
   
@@ -51,7 +51,6 @@ class DLNewsController: UIViewController {
   
   @objc func interactive(gesture: UIPanGestureRecognizer) {
     let position = gesture.locationInView(view)
-    let pointInCollection = collectionView.convertPoint(position, toView: collectionView)
     switch gesture.state {
     case .Began:
       if isInteracting { return }
@@ -59,7 +58,7 @@ class DLNewsController: UIViewController {
       isInteracting = true
       
       guard let indexPath = collectionView.indexPathForItemAtPoint(position) else {return}
-      
+      currentIndex = indexPath.row
       collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
     case .Changed:
       collectionView.updateInteractiveMovementTargetPosition(position)
@@ -67,9 +66,21 @@ class DLNewsController: UIViewController {
       isInteracting = false
       collectionView.cancelInteractiveMovement()
     default:
+      print(view.frame.width - position.x)
+      if view.frame.width - position.x < 30 {
+        removeAt(currentIndex)
+      }
       isInteracting = false
       collectionView.endInteractiveMovement()
     }
+  }
+  
+  private func removeAt(index: Int) {
+    self.dataSource.removeAtIndex(index)
+    collectionView.performBatchUpdates({
+      self.collectionViewLayout.removeAllAttribute()
+      self.collectionView?.deleteItemsAtIndexPaths([NSIndexPath(forItem: index, inSection: 0)])
+      }, completion: nil)
   }
 }
 
@@ -91,8 +102,7 @@ extension DLNewsController: UICollectionViewDelegate {
   }
   
   func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-    print("source: \(sourceIndexPath.row)")
-    print("destination: \(destinationIndexPath.row)")
-    //dataSource.removeAtIndex(sourceIndexPath.row)
+    //collectionView.setCollectionViewLayout(collectionViewLayout, animated: true)
+    collectionViewLayout.invalidateLayout()
   }
 }
