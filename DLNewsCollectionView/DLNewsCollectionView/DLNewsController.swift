@@ -26,12 +26,13 @@ class DLNewsController: UIViewController {
     collectionView.dataSource = self
     //collectionView.userInteractionEnabled = true
     
-    collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "NewsCell")
+    collectionView.registerClass(DLNewsCollectionViewCell.self, forCellWithReuseIdentifier: "NewsCell")
     view.addSubview(collectionView)
     
-    let pullGesture = UIPanGestureRecognizer(target: self, action: #selector(self.interactive(_:)))
-    collectionView.addGestureRecognizer(pullGesture)
+    let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.interactive(_:)))
+    collectionView.addGestureRecognizer(panGesture)
     
+    collectionView.backgroundColor = UIColor.greenColor()
     initDatasoruce()
   }
   
@@ -50,13 +51,15 @@ class DLNewsController: UIViewController {
   
   @objc func interactive(gesture: UIPanGestureRecognizer) {
     let position = gesture.locationInView(view)
-    guard let indexPath = collectionView.indexPathForItemAtPoint(position) else {return}
-    
+    let pointInCollection = collectionView.convertPoint(position, toView: collectionView)
     switch gesture.state {
     case .Began:
       if isInteracting { return }
       
       isInteracting = true
+      
+      guard let indexPath = collectionView.indexPathForItemAtPoint(position) else {return}
+      
       collectionView.beginInteractiveMovementForItemAtIndexPath(indexPath)
     case .Changed:
       collectionView.updateInteractiveMovementTargetPosition(position)
@@ -84,7 +87,7 @@ extension DLNewsController: UICollectionViewDataSource {
 
 extension DLNewsController: UICollectionViewDelegate {
   func collectionView(collectionView: UICollectionView, targetIndexPathForMoveFromItemAtIndexPath originalIndexPath: NSIndexPath, toProposedIndexPath proposedIndexPath: NSIndexPath) -> NSIndexPath {
-    return NSIndexPath(forItem: 0, inSection: 0)
+    return originalIndexPath
   }
   
   func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {

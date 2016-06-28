@@ -64,7 +64,11 @@ class DLNewsCollectionViewLayout: UICollectionViewLayout {
   }
   
   override func layoutAttributesForInteractivelyMovingItemAtIndexPath(indexPath: NSIndexPath, withTargetPosition position: CGPoint) -> UICollectionViewLayoutAttributes {
-    return super.layoutAttributesForInteractivelyMovingItemAtIndexPath(indexPath, withTargetPosition: position)
+    let attribute = super.layoutAttributesForInteractivelyMovingItemAtIndexPath(indexPath, withTargetPosition: position)
+    attribute.center = position
+    print(position)
+    print(indexPath.row)
+    return attribute
   }
 
 }
